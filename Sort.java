@@ -21,11 +21,14 @@ public class Sort {
      * (현재는 구현이 필요합니다)
      */
     static int partition(int[] a, int start, int end) {
-        // TODO: partition 알고리즘을 구현해야 함
+        int value = a[end]; 
+        int i = start - 1; 
+        for (int j = start; j <= end - 1; ++j)
+            if (a[j] < value) 
+                swap(a, ++i, j);
+            swap(a, i + 1, end);
+            return i + 1;
         
-        // 컴파일 오류를 막기 위해 임시로 start 값을 반환하도록 추가했습니다.
-        // 실제 구현 시에는 피벗의 인덱스를 반환해야 합니다.
-        return start; 
     }
 
     /**
